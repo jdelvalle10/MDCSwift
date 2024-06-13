@@ -1,0 +1,85 @@
+// Create a simple structure that represents the template to make a car.
+
+// Properties
+// 1. Type (Pick-up, Sedan, race, etc)
+// 2. Speed (1 - 140 mph)
+// 3. Integrity (1-100) 
+// 4. Steering (-100 and 100)
+
+// Functions
+
+// function Steer_Right
+// function Steer_Left
+// mid_crash (Decrease integrity by -20)
+// major_Crash (Decrease integrity by 80)
+
+struct Car {
+    var type: String    
+    var speed: Int    
+    var integrity: Int    
+    var steering: Int
+    
+    mutating func steer_Right(degrees: Int){
+        if self.steering + degrees > 100 {
+            self.steering = 100
+            print("Warning!!!")
+        } else {
+            self.steering = self.steering + degrees
+        }
+    }
+    
+    mutating func steer_Left(degrees: Int){
+        if self.steering - degrees < -100 {
+            self.steering = -100
+            print("Warning!!!")
+        } else {
+            self.steering = self.steering - degrees
+        }
+    }
+    
+    mutating func mid_crash(){
+        self.integrity = self.integrity - 10
+        if self.integrity <= 0 {
+            print("GAME OVER!")
+        }
+        print("Whoops!")
+    }
+
+    mutating func major_crash(){
+        self.integrity = self.integrity - 80
+        if self.integrity <= 0 {
+            print("GAME OVER!")
+        }
+        print("Dear Lord!")
+    }
+    
+     func read_indicators(){
+        print("***************************************")
+        print("*             \(self.type)                *")
+        print("***************************************")
+        print("* \(self.speed)MPH         \(self.steering)Deg             \(self.integrity)%   ")
+        print("***************************************")
+    }
+    
+    mutating func acceleration(mph: Int){
+        self.speed = self.speed + mph    
+    }
+
+    mutating func brakes(mph: Int){
+        self.speed = self.speed - mph    
+    }
+}
+
+var car1 = Car(type: "Racing", speed: 0, integrity: 100, steering: 0)
+
+var car2 = Car(type: "Pick-up", speed: 45, integrity: 50, steering: 10)
+
+
+
+car1.read_indicators()
+car2.read_indicators()
+car1.acceleration(mph: 10)
+car1.read_indicators()
+car2.read_indicators()
+
+
