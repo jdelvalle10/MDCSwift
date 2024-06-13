@@ -1,0 +1,120 @@
+// Other data types: Collections
+//
+//// Arrays
+//
+//var names: [String] = ["Jose", "Luis", "Pete", "Bob"]
+//
+//print(names[0])
+//
+//names.append("Alice")
+//print(names[4])
+//
+//
+//print(names[4])
+//
+//// Dictionaries
+//
+//var scores: [String:Double] = ["Jose":4.0, "Luis":4.7, "Pete":3.8, "Bob": 2.0, "Alice":5.0]
+//print(scores["Jose"])
+//
+//// Todo List
+
+
+var myTodoList = [String:String]()
+
+myTodoList["Monday"] = "Teach at MDC"
+// print(myTodoList)
+
+myTodoList["Tuesday"] = "Buy groceries at Publix"
+// print(myTodoList)
+
+myTodoList["Wednesday"] = "Goto to the park"
+myTodoList["Thursday"] = "Study Cryptography"
+myTodoList["Friday"] = "Go to the movies"
+myTodoList["Saturday"] = "Play Videogames"
+myTodoList["Sunday"] = "Do nothing"
+
+// Now we can check what it is in my To-Do list...
+// To get the content of a key-value pair, you need to use the 'if-let' sintax
+// Example:
+
+if let MondayTask = myTodoList["Monday"] {
+    print("On Monday, I have to \(MondayTask)")
+}
+
+// Optional:
+// Write a script that prints the keys (names) and the values (scores) 
+
+// First we use the method "keys" to get the keys;
+
+var days = Array(myTodoList.keys)
+// And we use the method "values" to get the values
+
+var todo = Array(myTodoList.values)
+
+print(days)
+print(todo)
+
+// and we can use a loop to print the entire thing
+
+for n in 0...6 {
+    print("On \(days[n]) I have to \(todo[n])")
+}
+
+
+
+// Case-Switch
+
+// Switch - case
+
+// Discrete
+let a = 10
+let b = 20
+
+
+let option: Int = 2
+
+switch option {
+case 1:
+    print("\(a) + \(b) = \(a+b)")
+case 2:
+    print("\(a) - \(b) = \(a-b)")
+case 3: 
+    print("That's a tricycle")
+case 4:
+    print("That would be a car")
+default:
+    print("Invalid number of wheels!") 
+}
+
+// Functions
+
+import Foundation
+
+func area(radius: Double) {
+    let pi = 3.14
+    var a = radius*radius*pi
+    print("The area of your circumference is \(a)")
+}
+
+func areaOfTriangle(b: Double, h: Double){
+    var a = (b * h)/2
+    print("The area of your triangle is \(a)")
+}
+
+
+
+func areaOfPentagon(s: Double){
+    var a = 1.72*pow(s,2)
+    print("The area of your pentagon is \(a)")
+}
+
+areaOfTriangle(b: 12, h: 3.5)
+area(radius: 23.5)
+areaOfPentagon(s: 23.3)
+
+
+
+
+
+
