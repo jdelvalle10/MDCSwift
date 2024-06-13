@@ -1,0 +1,18 @@
+var a: Double = 10
+var b: Double = 30
+var name: String = "Jose"
+
+print("******************************")
+print("** WELCOME TO MY CALCULATOR **")
+print("******************************\n")
+
+print("The addition of \(a) and \(b) is \(a + b)")
+print("The substraction of \(a) and \(b) is \(a - b)")
+print("The multiplication of \(a) and \(b) is \(a * b)")
+print("The division of \(a) and \(b) is \(a / b)")
+print("\(a) to the power of 2 is \(a * a)")
+print("\(a) to the power of 3 is \(a * a * a)\n")
+
+print("******************************")
+print("**  THANK YOU! \(name)!        **")
+print("******************************")
