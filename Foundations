@@ -16,3 +16,75 @@ print("\(a) to the power of 3 is \(a * a * a)\n")
 print("******************************")
 print("**  THANK YOU! \(name)!        **")
 print("******************************")
+
+// Loops
+// In the foor loop:
+// 1. No need of initializing the auxiliar variable
+// 2. No need of manually incrementing the auxiliar variable
+
+for i in 1...10 {
+    print("Hello")
+}
+
+// While loop
+// The while loop is useful when you don't know beforehand the number of repetitions
+// 1. Need to declare and initialize the axiliar varible
+// 2. Need to add a formula to increment/decrement the auxiliar variable
+
+
+var j = 0
+
+while (j < 10) {
+    print("Hello")
+    j = j + 1 
+}
+
+// First, we get a value in Celsius and store it as a constant.
+
+let celsius: Double = 15.0
+
+// Now we calculate the equivalent in Fahrenheit
+
+var f = (9/5)*celsius + 32
+
+print("The given temperature in Fahrenheit is: \(f)")
+
+if (f > 60){
+    print("Something")
+} else if (f > 70) {
+    print("Whatever")
+} else {
+    print("Something else")
+}
+
+// Exercise #3.
+// Write a swift script that print out only the numbers between 1 and 100, that are NOT divisible by 2, 3, 5, 7 or 11 
+
+// *********************************************************
+
+// Modulo division
+
+//print(10 % 2) // This equals 0 because 10 divided by 2 yields no leftover.
+//
+//print(10 % 3) // This equals 1 because 10 / 3 = 3 with a leftover of 1
+
+// Use this to check if a number is divisible by another. 
+
+print("Here is the list of numbers...")
+
+
+
+for n in 2...100 {
+    if n % 2 != 0 {
+        if n % 3 != 0 {
+            if n % 5 != 0 {
+                if n % 7 != 0 {
+                    if n % 11 != 0 {
+                        print(n)
+                    }
+                }
+            }
+        }
+        }
+}
+
