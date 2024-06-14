@@ -1,0 +1,59 @@
+import SwiftUI
+
+/*#-code-walkthrough(1.first)*/
+struct/*#-code-walkthrough(1.introView)*/ IntroView: /*#-code-walkthrough(1.introView)*/ View {
+    /*#-code-walkthrough(1.body)*/
+    @State var numBall: Int = 0
+    var body: some View {
+        VStack { 
+            HStack {
+                VStack{
+                    Text("My name is Lionel Messi")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Text("I've won 8 ballon D'or")
+                }
+            Image("Ballon")
+            }
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Image("Messi")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 800, height: 800
+                )
+            /*#-code-walkthrough(2.bothModifiers)*/
+            //#-learning-task(changeText)
+        }
+        HStack{
+            Text("Likes: \(numBall)")
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .font(.largeTitle)  
+            Button(action: {
+                numBall += 1
+            }, label: {
+                Text("Love it!")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(25)
+            }) 
+        }       
+        //#-learning-task(addImageInHStack)
+        //#-learning-task(modifierWalkthrough)
+        /*#-code-walkthrough(2.bothModifiers)*/
+        /*#-code-walkthrough(1.text)*/
+        //#-learning-task(textElement)
+    }
+    /*#-code-walkthrough(1.body)*/
+}
+
+/*#-code-walkthrough(1.preview)*/
+struct IntroView_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            IntroView()
+        }
+    }
+}
+/*#-code-walkthrough(1.preview)*/
+/*#-code-walkthrough(1.first)*/
+
